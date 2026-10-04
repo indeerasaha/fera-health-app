@@ -5,15 +5,16 @@ import { LogFAB } from '@/components/LogFAB';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { PeriodCalendar } from '@/features/period';
 
 export default function PeriodScreen() {
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
-        <ThemedText type="title">Period</ThemedText>
-        <ThemedText type="small" themeColor="textSecondary">
-          Cycle tracking and calendar will go here.
+        <ThemedText type="title" style={styles.title}>
+          Period
         </ThemedText>
+        <PeriodCalendar />
       </SafeAreaView>
       <LogFAB />
     </ThemedView>
@@ -26,7 +27,10 @@ const styles = StyleSheet.create({
   },
   safeArea: {
     flex: 1,
-    padding: Spacing.four,
-    gap: Spacing.three,
+    paddingHorizontal: Spacing.four,
+    paddingTop: Spacing.four,
+  },
+  title: {
+    marginBottom: Spacing.three,
   },
 });
